@@ -116,14 +116,14 @@ module query_tabeos
 
  subroutine query_all_files(tabfile, rhopart, energpart, rho, specific_energy, mu, pseudo_ro, ro, planck, temp)
 
-  real, intent(inout)          :: rhopart(:), energpart(:), rho(:), specific_energy(:), temp(:), &
-  mu(:),pseudo_ro(:),ro(:),planck(:)
-  character(len=*), intent(in) :: tabfile
-  character(len=9) :: fname
-  character(len=14) :: outname
-  integer                      :: i, ioerr, inid
+   real, intent(inout)          :: rhopart(:), energpart(:), rho(:), specific_energy(:), temp(:), &
+    mu(:),pseudo_ro(:),ro(:),planck(:)
+   character(len=*), intent(in) :: tabfile
+   character(len=9) :: fname
+   character(len=14) :: outname
+   integer                      :: i, ioerr, inid
 
-    do i = 1, 399
+     do i = 1, 399
         write(fname, '(A, I3.3)') "part00", i
         write(outname, '(A, I3.3)') "queryeos_00", i
         print*, fname
@@ -134,7 +134,7 @@ module query_tabeos
 
         call query_snapshot(fname,tabfile, rhopart, energpart, rho, specific_energy, mu, pseudo_ro, ro, planck, temp, outname)
 
-    end do
+     end do
 
  end subroutine
 
