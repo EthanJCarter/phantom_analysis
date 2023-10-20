@@ -358,19 +358,19 @@ module find_clumps
 
  write(fid3,'(5((E16.8),1x))')  clumps(clumpID)%x, clumps(clumpID)%y,clumps(clumpID)%z,clumps(clumpID)%rho, clumps(clumpID)%pid
 
- write(fid3,"('#',12(1x,'[',i2.2,1x,a11,']',2x))") &
- 1, 'pid'    , &
- 2, 'x'      , &
- 3, 'y'      , &
- 4, 'z'      , &
- 5, 'h'      , &
- 6, 'vx'     , &
- 7, 'vy'     , &
- 8, 'vz'     , &
- 9, 'r'      , &
- 10,'mass'   , &
- 11,'rho'    , &
- 12,'temp'
+ write(fid3,"(12(A,1x))") &
+ 'pid'    , &
+ 'x'      , &
+ 'y'      , &
+ 'z'      , &
+ 'h'      , &
+ 'vx'     , &
+ 'vy'     , &
+ 'vz'     , &
+ 'r'      , &
+ 'mass'   , &
+ 'rho'    , &
+ 'temp'
 
  do i=1,1000
   write(fid3,'(I8,8(F10.2),2(E16.8),F10.2,1x)') fragment(i)%pid,fragment(i)%x,fragment(i)%y,fragment(i)%z,fragment(i)%h, &
